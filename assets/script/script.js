@@ -2,13 +2,22 @@
 function success_function(response) {
     console.log(response)
 
-    var api_queryTwo = "http://ddragon.leagueoflegends.com/cdn/9.24.2/img/profileicon/" + icon + ".png"
+    // second function for next Ajax call
+    // need to create nested functions instead of just nested Ajax calls
+    function secondAjax(responseTwo) {
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (thisCanBeNamedAnythingItsJustTheObject) { })
+    }
+    secondAjax();
+
 
     // $.ajax({
     //     url: api_queryTwo,
     //     method: "GET"
     // });.then(function (secondResponse) {
-     
+
     // }
 
 
